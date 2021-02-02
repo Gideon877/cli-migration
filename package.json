@@ -9,7 +9,7 @@
   "bin": {
     "postgres-migration": "./cli.js"
   },
-  "author": "",
+  "author": "Thabang Gideon Magaola",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
