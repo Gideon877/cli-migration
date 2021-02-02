@@ -36,7 +36,7 @@ DATABASE_URL=postgresql://localhost:${PORT}/${DATABASE_NAME}
 postgres-migration
 ```
 
-or 
+or add this in your `package.json` file.
 
 ```json
 {
@@ -49,4 +49,25 @@ or
 ###### run following command to excute
 
 > npm run migrate
+
+
+## Author
+
+👤 **Thabang Gideon Magaola**
+
+* Website: https://gideon877.github.io/portfolio/
+* Twitter: [@gideon877](https://twitter.com/gideon877)
+* Github: [@gideon877](https://github.com/gideon877)
+* LinkedIn: [@gideon877](https://linkedin.com/in/gideon877)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+## Contributors
+
+👤 **Andre Vermeulen**
+
+* Github: [@avermeulen](https://github.com/avermeulen)
+
 
