@@ -1,0 +1,19 @@
+{
+  "name": "postgres-migration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "postgres-migration": "./cli.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "find-config": "^1.0.0",
+    "pg": "^8.5.1"
+  }
+}
