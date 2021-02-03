@@ -29,8 +29,13 @@ if(connectionString) {
     }
 
     async function createMigrationsTable() {
-        const sql = `CREATE TABLE IF NOT EXISTS migrations (last_migration integer not null);`
+        const sql = `create table if not exists migrations (last_migration integer not null);`
         await pool.query(sql);
+        const results = await pool.query(`select count(*) from migrations`);
+
+        if (results.rows[0].count == 0) {
+            await pool.query(`insert into migrations (last_migration) values(0)`);
+        }
 
     }
 
@@ -48,6 +53,11 @@ if(connectionString) {
     async function updateMigrationIndex() {
         const sql = `update migrations set last_migration = last_migration + 1`;
         await pool.query(sql);
+    }
+
+    async function seedMigrationIndex(index) {
+        const sql = `update migrations set last_migration = $1`;
+        await pool.query(sql, [index]);
     }
 
     async function migrate() {
@@ -95,6 +105,10 @@ if(connectionString) {
                     const sql = process.argv[3]
                     await executeSql(sql);
                     break;
+                case 'seed':
+                    const migrationIndex = Number(process.argv[3]);
+                    console.log(`Setting current migration index to: ${migrationIndex}`);
+                    await seedMigrationIndex(migrationIndex);
                 default:
                     await migrate();
             }

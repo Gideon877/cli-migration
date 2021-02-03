@@ -36,6 +36,12 @@ DATABASE_URL=postgresql://localhost:${PORT}/${DATABASE_NAME}
 postgres-migration
 ```
 
+You can do a few things like:
+
+* checking the current migration index `postgres-migration index`
+* set the current migration index using `postgres-migration seed 7`
+* run some sql using using `postgres-migration execute "select * from your_table" `
+
 or add this in your `package.json` file.
 
 ```json
